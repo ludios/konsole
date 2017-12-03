@@ -34,8 +34,6 @@
 #include <QVBoxLayout>
 
 // KDE
-#include <KColorScheme>
-#include <KColorUtils>
 #include <KLocalizedString>
 #include <QMenu>
 
@@ -662,14 +660,7 @@ void TabbedViewContainer::widgetRemoved(int index)
 
 void TabbedViewContainer::setTabActivity(int index , bool activity)
 {
-    const QPalette& palette = _tabBar->palette();
-    KColorScheme colorScheme(palette.currentColorGroup());
-    const QColor colorSchemeActive = colorScheme.foreground(KColorScheme::ActiveText).color();
-
-    const QColor normalColor = palette.text().color();
-    const QColor activityColor = KColorUtils::mix(normalColor, colorSchemeActive);
-
-    QColor color = activity ? activityColor : QColor();
+    QColor color = activity ? QColor(209, 25, 25) : QColor();
 
     if (color != _tabBar->tabTextColor(index))
         _tabBar->setTabTextColor(index, color);
