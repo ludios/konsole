@@ -48,7 +48,7 @@ ViewContainerTabBar::ViewContainerTabBar(QWidget* parent, TabbedViewContainer* c
     setDrawBase(true);
     setDocumentMode(true);
     setFocusPolicy(Qt::NoFocus);
-    setSelectionBehaviorOnRemove(QTabBar::SelectPreviousTab);
+    setSelectionBehaviorOnRemove(QTabBar::SelectRightTab);
     setElideMode(Qt::ElideLeft);
 
     setAcceptDrops(true);
